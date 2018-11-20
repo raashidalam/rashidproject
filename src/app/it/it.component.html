@@ -1,0 +1,28 @@
+<!-- <ul style="margin-left:150px "> 
+    <li *ngFor="let usermodel of userModel" >
+    username: {{usermodel.username}},Email: {{usermodel.Emailid}}, Phone: {{usermodel.phone}}, preference: {{usermodel.timepreference}},Topic: {{usermodel.topic}},
+    </li>
+    </ul> -->
+    <div style="margin-left: 160px">
+        <mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+                <mat-cell *matCellDef="let user">{{user.username}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+                    <mat-cell *matCellDef="let user">{{user.Emailid}}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="phone">
+                        <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+                        <mat-cell *matCellDef="let user">{{user.phone}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="topic">
+                            <mat-header-cell *matHeaderCellDef>Topic</mat-header-cell>
+                            <mat-cell *matCellDef="let user">{{user.topic}}</mat-cell>
+                        </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row;columns:displayedColumns"></mat-row>
+        </mat-table>
+    </div>
+    
